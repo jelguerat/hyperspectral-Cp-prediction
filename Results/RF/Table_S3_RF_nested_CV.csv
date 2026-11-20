@@ -1,0 +1,30 @@
+Model,Panel,RowType,OuterFold,Preproc,Bin_nm,mtry,inner_RMSEP,n_train,n_test,R2,R2_SS,RMSEP,MAE,bias,RPD,Metric,Mean,SD,Value,Note
+RF,A,SearchSpace,,,,,,,,,,,,,,Preprocessing_variants,10,,,10 spectral preprocessing variants
+RF,A,SearchSpace,,,,,,,,,,,,,,Bin_widths_nm,,,,"5;25;50;75"
+RF,A,SearchSpace,,,,,,,,,,,,,,mtry_candidates,,,,"sqrt(p);p/3;p/6"
+RF,A,SearchSpace,,,,,,,,,,,,,,min_node_size,5,,,
+RF,A,SearchSpace,,,,,,,,,,,,,,Inner_trees,200,,,
+RF,A,SearchSpace,,,,,,,,,,,,,,Final_trees,800,,,
+RF,A,SearchSpace,,,,,,,,,,,,,,sample_fraction,0.632,,,
+RF,A,SearchSpace,,,,,,,,,,,,,,Outer_CV_folds,5,,,
+RF,A,SearchSpace,,,,,,,,,,,,,,Inner_CV_folds,5,,,
+RF,B,NestedSelected,1,spec_07_refl_deriv1,50,14,4.88088747970448e-05,,,,,,,,,,,,"Selected by minimum inner RMSEP in outer fold 1"
+RF,B,NestedSelected,2,spec_15_abs_deriv1,50,14,4.68959350036527e-05,,,,,,,,,,,,"Selected by minimum inner RMSEP in outer fold 2"
+RF,B,NestedSelected,3,spec_07_refl_deriv1,50,14,4.91105874465857e-05,,,,,,,,,,,,"Selected by minimum inner RMSEP in outer fold 3"
+RF,B,NestedSelected,4,spec_07_refl_deriv1,25,28,4.51173173951186e-05,,,,,,,,,,,,"Selected by minimum inner RMSEP in outer fold 4"
+RF,B,NestedSelected,5,spec_07_refl_deriv1,25,28,4.29867705107908e-05,,,,,,,,,,,,"Selected by minimum inner RMSEP in outer fold 5"
+RF,C,OuterMetrics,1,spec_07_refl_deriv1,50,14,,244,61,0.969835800680537,0.968997198781455,3.78545843807075e-05,2.53498260983606e-05,-5.93090271174794e-07,5.72649419027045,,,,
+RF,C,OuterMetrics,2,spec_15_abs_deriv1,50,14,,244,61,0.915111370542738,0.910592451020411,5.84886532462360e-05,3.55175663251366e-05,-3.24540048497219e-07,3.37211360721039,,,,
+RF,C,OuterMetrics,3,spec_07_refl_deriv1,50,14,,244,61,0.955742956853176,0.953137194460418,3.79246553932951e-05,2.52179560826503e-05,6.25971678142079e-06,4.65773901037679,,,,
+RF,C,OuterMetrics,4,spec_07_refl_deriv1,25,28,,244,61,0.913197055677819,0.913052792948974,4.99104168091218e-05,3.39236690584016e-05,-1.23202551571048e-07,3.41949107316621,,,,
+RF,C,OuterMetrics,5,spec_07_refl_deriv1,25,28,,244,61,0.928430494504854,0.927732381687293,5.36927733108529e-05,3.60556670321038e-05,-4.09836869945356e-06,3.75074398308718,,,,
+RF,D,Aggregate,,,,,,,,,,,,,,R2,0.936463535651825,0.025235,,Mean across five nested outer folds
+RF,D,Aggregate,,,,,,,,,,,,,,R2_SS,0.934702403779710,0.025570,,Mean across five nested outer folds
+RF,D,Aggregate,,,,,,,,,,,,,,RPD,4.185316372822204,1.004400,,Mean and SD across five nested outer folds
+RF,D,Aggregate,,,,,,,,,,,,,,RPD_margin_95,,,1.2470,Approximate 95% margin across folds
+RF,D,Aggregate,,,,,,,,,,,,,,RMSEP,4.757421662804266e-05,9.348e-06,,Mean and SD across five nested outer folds
+RF,D,Aggregate,,,,,,,,,,,,,,MAE,3.121293691933058e-05,5.469e-06,,Mean and SD across five nested outer folds
+RF,D,Aggregate,,,,,,,,,,,,,,bias,2.241030421448338e-07,3.748e-06,,Mean and SD across five nested outer folds
+RF,E,Frequency,,,,,,,,,,,,,,spec_07_refl_deriv1_bin50_mtry14,,,2,Selected in folds 1 and 3
+RF,E,Frequency,,,,,,,,,,,,,,spec_15_abs_deriv1_bin50_mtry14,,,1,Selected in fold 2
+RF,E,Frequency,,,,,,,,,,,,,,spec_07_refl_deriv1_bin25_mtry28,,,2,Selected in folds 4 and 5

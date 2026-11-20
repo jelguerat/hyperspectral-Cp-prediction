@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this software or the associated workflow, please cite it using the metadata below."
+type: software
+title: "Hyperspectral Cp prediction"
+authors:
+  - family-names: Elguera
+    given-names: Jhohan
+version: "1.0.0"
+repository-code: "https://github.com/jelguerat/hyperspectral-Cp-prediction"
