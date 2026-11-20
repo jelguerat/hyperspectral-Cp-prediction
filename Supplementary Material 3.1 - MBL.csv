@@ -1,0 +1,27 @@
+Model,Panel,RowType,OuterFold,Preproc,Bin_nm,best_k,inner_RMSEP,n_train,n_test,R2,R2_SS,RMSEP,MAE,bias,RPD,Metric,Mean,SD,Value,Note
+MBL,A,SearchSpace,,,,,,,,,,,,,,Preprocessing_variants,10,,,10 spectral preprocessing variants
+MBL,A,SearchSpace,,,,,,,,,,,,,,Bin_widths_nm,,,,"5;25;50;75"
+MBL,A,SearchSpace,,,,,,,,,,,,,,k_values,,,,"10;25;50;100"
+MBL,A,SearchSpace,,,,,,,,,,,,,,Dissimilarity,diss_pca,,,
+MBL,A,SearchSpace,,,,,,,,,,,,,,Local_model,WAPLS,,,
+MBL,A,SearchSpace,,,,,,,,,,,,,,WAPLS_components,,,,"1-10"
+MBL,A,SearchSpace,,,,,,,,,,,,,,Outer_CV_folds,5,,,
+MBL,A,SearchSpace,,,,,,,,,,,,,,Inner_CV_folds,5,,,
+MBL,B,NestedSelected,1,spec_07_refl_deriv1,50,100,4.53257179074734e-05,,,,,,,,,,,,"Real MBL foldmetrics; selected by minimum inner RMSEP"
+MBL,B,NestedSelected,2,spec_07_refl_deriv1,50,100,4.73446729748151e-05,,,,,,,,,,,,"Real MBL foldmetrics; selected by minimum inner RMSEP"
+MBL,B,NestedSelected,3,spec_07_refl_deriv1,50,100,4.63362312783506e-05,,,,,,,,,,,,"Real MBL foldmetrics; selected by minimum inner RMSEP"
+MBL,B,NestedSelected,4,spec_07_refl_deriv1,50,100,4.36530533401377e-05,,,,,,,,,,,,"Real MBL foldmetrics; selected by minimum inner RMSEP"
+MBL,B,NestedSelected,5,spec_07_refl_deriv1,50,100,4.07823007439475e-05,,,,,,,,,,,,"Real MBL foldmetrics; selected by minimum inner RMSEP"
+MBL,C,OuterMetrics,1,spec_07_refl_deriv1,50,100,,244,61,0.970021704484715,0.968408184959790,3.82124869524073e-05,2.69028921857264e-05,-2.72312920913854e-06,5.67285918347084,,,,"Real MBL outer metric"
+MBL,C,OuterMetrics,2,spec_07_refl_deriv1,50,100,,244,61,0.959167318765918,0.951685591171431,4.29954859412302e-05,2.85067511251859e-05,-1.42729213660648e-06,4.58723466339312,,,,"Real MBL outer metric"
+MBL,C,OuterMetrics,3,spec_07_refl_deriv1,50,100,,244,61,0.952988035585258,0.949532711805152,3.93561389512633e-05,2.90510766805249e-05,1.02698216438856e-05,4.48832511489996,,,,"Real MBL outer metric"
+MBL,C,OuterMetrics,4,spec_07_refl_deriv1,50,100,,244,61,0.938880560851661,0.938765356903567,4.18853331584011e-05,3.02120478423738e-05,-6.95149405152954e-07,4.07465362854743,,,,"Real MBL outer metric"
+MBL,C,OuterMetrics,5,spec_07_refl_deriv1,50,100,,244,61,0.932939975891080,0.932565574145096,5.18662438478875e-05,3.69534044886413e-05,-1.06884211183088e-06,3.88283074867678,,,,"Real MBL outer metric"
+MBL,D,Aggregate,,,,,,,,,,,,,,R2,0.950800,0.015044,,Real mean across five outer folds
+MBL,D,Aggregate,,,,,,,,,,,,,,R2_SS,0.948191,0.013745,,Real mean across five outer folds
+MBL,D,Aggregate,,,,,,,,,,,,,,RPD,4.541181,0.695824,,Real mean and SD; manuscript rounded 4.541
+MBL,D,Aggregate,,,,,,,,,,,,,,RPD_margin_95,,,0.6100,Real approximate 95% margin
+MBL,D,Aggregate,,,,,,,,,,,,,,RMSEP,4.286314e-05,5.384e-06,,Real mean and approximate SD
+MBL,D,Aggregate,,,,,,,,,,,,,,MAE,3.032523e-05,3.892e-06,,Real mean and approximate SD
+MBL,D,Aggregate,,,,,,,,,,,,,,bias,8.710818e-07,5.309e-06,,Real mean and approximate SD
+MBL,E,Frequency,,,,,,,,,,,,,,spec_07_refl_deriv1_bin50_bestk100,,,5,"Real selection frequency 5/5 from supplied foldmetrics"

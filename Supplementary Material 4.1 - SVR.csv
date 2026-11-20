@@ -1,0 +1,32 @@
+Model,Panel,RowType,OuterFold,Preproc,Bin_nm,cost,gamma,inner_RMSEP,n_train,n_test,R2,R2_SS,RMSEP,MAE,bias,RPD,Metric,Mean,SD,Value,Note
+SVR,A,SearchSpace,,,,,,,,,,,,,,Preprocessing_variants,10,,,10 spectral preprocessing variants
+SVR,A,SearchSpace,,,,,,,,,,,,,,Bin_widths_nm,,,,"5;25;50;75"
+SVR,A,SearchSpace,,,,,,,,,,,,,,cost_values,,,,"50;100;200;500;1000;2000"
+SVR,A,SearchSpace,,,,,,,,,,,,,,gamma_values,,,,"1e-4;3e-4;1e-3;3e-3;1e-2"
+SVR,A,SearchSpace,,,,,,,,,,,,,,epsilon,0.1,,,
+SVR,A,SearchSpace,,,,,,,,,,,,,,kernel,radial,,,
+SVR,A,SearchSpace,,,,,,,,,,,,,,scale,TRUE,,,
+SVR,A,SearchSpace,,,,,,,,,,,,,,Outer_CV_folds,5,,,
+SVR,A,SearchSpace,,,,,,,,,,,,,,Inner_CV_folds,5,,,
+SVR,B,NestedSelected,1,spec_02_refl_smooth,5,1000,0.0003,4.09719698085216e-05,,,,,,,,,,,,"Selected by minimum inner RMSEP in outer fold 1"
+SVR,B,NestedSelected,2,spec_02_refl_smooth,75,1000,0.003,4.23117980684764e-05,,,,,,,,,,,,"Selected by minimum inner RMSEP in outer fold 2"
+SVR,B,NestedSelected,3,spec_02_refl_smooth,5,2000,0.0003,4.16664328305269e-05,,,,,,,,,,,,"Selected by minimum inner RMSEP in outer fold 3"
+SVR,B,NestedSelected,4,spec_01_refl_raw,25,2000,0.001,3.86404803029569e-05,,,,,,,,,,,,"Selected by minimum inner RMSEP in outer fold 4"
+SVR,B,NestedSelected,5,spec_10_abs_smooth,5,2000,0.0003,3.36903167568034e-05,,,,,,,,,,,,"Selected by minimum inner RMSEP in outer fold 5"
+SVR,C,OuterMetrics,1,spec_02_refl_smooth,5,1000,0.0003,,244,61,0.976571116957320,0.975200133346634,3.38565489120232e-05,2.51912180759548e-05,6.03285365960531e-06,6.40272161508589,,,,
+SVR,C,OuterMetrics,2,spec_02_refl_smooth,75,1000,0.003,,244,61,0.958101982895133,0.954885616169804,4.15472269111922e-05,2.95227792474378e-05,-5.02974229899883e-06,4.74713712904655,,,,
+SVR,C,OuterMetrics,3,spec_02_refl_smooth,5,2000,0.0003,,244,61,0.955387948566268,0.952008610618395,3.83786030153054e-05,2.99240106573556e-05,5.39624348485864e-06,4.60264660519306,,,,
+SVR,C,OuterMetrics,4,spec_01_refl_raw,25,2000,0.001,,244,61,0.937270640282466,0.936867012835507,4.25296244779028e-05,2.90367171787626e-05,8.66163957875920e-07,4.01292573898627,,,,
+SVR,C,OuterMetrics,5,spec_10_abs_smooth,5,2000,0.0003,,244,61,0.931393399321375,0.930932764094919,5.24904146244270e-05,3.40910329046912e-05,-3.58904563338949e-06,3.83665947148429,,,,
+SVR,D,Aggregate,,,,,,,,,,,,,,R2,0.951745017604512,0.017980,,Mean across five nested outer folds
+SVR,D,Aggregate,,,,,,,,,,,,,,R2_SS,0.949978827413052,0.017310,,Mean across five nested outer folds
+SVR,D,Aggregate,,,,,,,,,,,,,,RPD,4.720418111959212,1.015650,,Mean and SD across five nested outer folds
+SVR,D,Aggregate,,,,,,,,,,,,,,RPD_margin_95,,,1.2610,Approximate 95% margin across folds
+SVR,D,Aggregate,,,,,,,,,,,,,,RMSEP,4.176048358817012e-05,6.886e-06,,Mean and SD across five nested outer folds
+SVR,D,Aggregate,,,,,,,,,,,,,,MAE,2.955315161284040e-05,3.163e-06,,Mean and SD across five nested outer folds
+SVR,D,Aggregate,,,,,,,,,,,,,,bias,7.352946339903100e-07,5.043e-06,,Mean and SD across five nested outer folds
+SVR,E,Frequency,,,,,,,,,,,,,,spec_02_refl_smooth_bin5_cost1000_gamma0.0003,,,1,Selected in fold 1
+SVR,E,Frequency,,,,,,,,,,,,,,spec_02_refl_smooth_bin75_cost1000_gamma0.003,,,1,Selected in fold 2
+SVR,E,Frequency,,,,,,,,,,,,,,spec_02_refl_smooth_bin5_cost2000_gamma0.0003,,,1,Selected in fold 3
+SVR,E,Frequency,,,,,,,,,,,,,,spec_01_refl_raw_bin25_cost2000_gamma0.001,,,1,Selected in fold 4
+SVR,E,Frequency,,,,,,,,,,,,,,spec_10_abs_smooth_bin5_cost2000_gamma0.0003,,,1,Selected in fold 5
